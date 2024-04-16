@@ -16,6 +16,14 @@ const cities = [
   "paris",
 ];
 
+const capitalizedCityNames = cities.map((cityName) => {
+  return cityName.charAt(0).toUpperCase() + cityName.slice(1)});
+
+console.log(capitalizedCityNames)
+
+
+
+
 // -------------------
 // .map() - Iteration 2
 // -------------------
@@ -82,6 +90,19 @@ const students = [
   },
 ];
 
+const gradeStudents = students.map((student) => {
+  const projectsGrade = (student.firstProject + student.secondProject) / 2;
+
+  const finalGrade = Math.round((projectsGrade * 0.4) + (student.finalExam * 0.6));
+
+  return grades = {
+    name: student.name,
+    grade: finalGrade
+  };
+});
+
+console.log(gradeStudents)
+
 // -------------------
 // .reduce - Iteration 1
 // -------------------
@@ -92,6 +113,10 @@ const menu = [
   { name: "Chicken", calories: 250 },
   { name: "Pizza", calories: 520 },
 ];
+
+const averageCalories = menu.reduce((sum, food, index, array) => sum + food.calories / array.length, 0);
+
+console.log(averageCalories);
 
 // -------------------
 // .filter - Iteration 1
@@ -105,6 +130,12 @@ const people = [
   { name: "Bill", age: 19 },
   { name: "Jonas", age: 15 },
 ];
+
+const ofDrinkingAge = people.filter((person) => person.age >= 18);
+
+console.log(ofDrinkingAge);
+
+
 
 // -------------------
 // .filter - Iteration 2
@@ -182,7 +213,15 @@ const places = [
   },
 ];
 
+const poolPlaces = places.filter((place) => place.pool);
+
+console.log(poolPlaces);
+
 // -------------------
 // .filter - Iteration 3
 // -------------------
 const numbers = [1, 60, 112, 123, 100, 99, 73, 45];
+
+const filter = numbers.filter((number) => number % 2 === 1 && number > 42);
+
+console.log(filter);
